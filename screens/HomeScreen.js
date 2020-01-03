@@ -7,10 +7,12 @@ import {
   StyleSheet,
   Text,
   View,
+  TouchableHighlight
 } from 'react-native';
 
 import { MonoText } from '../components/StyledText';
-import { TouchableHighlight } from 'react-native-gesture-handler';
+import RoundedButton from '../components/buttons/RoundedButton';
+
 
 export default function HomeScreen() {
   return (
@@ -19,18 +21,15 @@ export default function HomeScreen() {
         style={styles.container}
         contentContainerStyle={styles.contentContainer}>
 
-        <View style={styles.toolBarContainer}>
-          <TouchableHighlight style={{padding: 15, borderWidth: 1, borderColor: 'black', borderRadius: 20}}>
-            <Text style={{fontSize: 16, textAlign: "center"}}>Sign Up</Text>
-          </TouchableHighlight>
-          <TouchableHighlight style={{padding: 15, borderWidth: 1, borderColor: 'black', borderRadius: 20}}>
-            <Text style={{fontSize: 16, textAlign: "center"}}>Sign In</Text>
-          </TouchableHighlight>
+        <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
+          <RoundedButton text="Sign Up" />
+          <RoundedButton text="Sign In" />
         </View>
 
         <View style={styles.welcomeContainer}>
           <Text>Welcome to musico</Text>
           <Text>Let's make some music</Text>
+          
           <Image
             source={
               __DEV__
@@ -101,9 +100,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 19,
     textAlign: 'center',
-  },
-  toolBarContainer: {
-    flexDirection: 'row',
   },
   contentContainer: {
     paddingTop: 30,
