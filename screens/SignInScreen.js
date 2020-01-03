@@ -5,7 +5,7 @@ import {
     Scrollview,
 } from 'react-native';
 
-export default class LoggedOut extends Component {
+export default class SignInScreen extends Component {
     render() {
         return (
             <View>
